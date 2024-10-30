@@ -14,6 +14,7 @@ RUN if [ "${NODE_VERSION}" != "none" ]; then su vscode -c "umask 0002 && . /usr/
 # RUN apt-get update && apt-get install -y ack
 
 RUN pipx install poetry
+RUN poetry self update
 WORKDIR /workspace
 COPY pyproject.toml poetry.lock ./
 # RUN poetry update
